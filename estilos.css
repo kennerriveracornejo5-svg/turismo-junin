@@ -311,7 +311,7 @@ footer{
         display:block;
     }
 }
-@media(max-width:500px){
+@media(max-width:400px){
     .contenido-rutas{ grid-template-columns:1fr; }
     .cards{ grid-template-columns:1fr; }
 
