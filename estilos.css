@@ -1,0 +1,303 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --verde:#2e7d32;
+    --verde-claro:#4CAF50;
+    --fondo:#f4f9f4;
+}
+
+body{
+    font-family:'Segoe UI', sans-serif;
+    background:var(--fondo);
+}
+
+/* NAVBAR */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(46,125,50,0.9);
+    backdrop-filter: blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    z-index:1000;
+}
+
+/* MENU */
+.menu-toggle{ display:none; }
+
+.menu-icon{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    height:500px;
+    background:url('imagenes/2019-10-04-1280x720-1-990x556.png') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* BOTÓN */
+.btn-pro{
+    background:var(--verde-claro);
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-pro:hover{
+    transform:scale(1.05);
+}
+
+/* INFO */
+.info{
+    padding:40px;
+    text-align:justify;
+}
+
+/* FILTROS */
+.filtros input{ display:none; }
+.filtros h2{
+    margin-left: 30px;
+}
+
+.botones{
+    text-align:center;
+    margin:20px 0;
+}
+
+.botones label{
+    background:var(--verde);
+    color:white;
+    padding:10px 20px;
+    margin:5px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.botones label:hover{
+    background:#1b5e20;
+}
+
+/* GRID RUTAS */
+.contenido-rutas{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:20px;
+}
+
+/* TARJETAS RUTAS */
+.ruta{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.ruta ul {
+    padding-left: 20px;
+}
+
+.ruta li {
+    margin-bottom: 10px;
+}
+.ruta:hover{
+    transform:scale(1.05);
+}
+
+.ruta img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.ruta a{
+    display:block;
+    margin:10px;
+    text-decoration:none;
+    color:var(--verde);
+    font-weight:bold;
+}
+
+/* FILTRO FUNCIONAL */
+#natural:checked ~ .contenido-rutas .ruta:not(.natural){ display:none; }
+#cultural:checked ~ .contenido-rutas .ruta:not(.cultural){ display:none; }
+#aventura:checked ~ .contenido-rutas .ruta:not(.aventura){ display:none; }
+
+/* GALERÍA */
+.cards{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:25px;
+    padding:120px 30px 60px;
+}
+
+.card{
+    display:block;
+    text-decoration:none;
+    color:white;
+    position:relative;
+    border-radius:15px;
+    overflow:hidden;
+    height:260px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.card:hover img{
+    transform:scale(1.15);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* EFECTO BRILLO */
+.card::before{
+    content:"";
+    position:absolute;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition:0.5s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+/* MAPA */
+.mapa{
+    padding:120px 20px;
+}
+.mapa h2{
+    margin-bottom: 15px;
+}
+
+/* FORM */
+.formulario{
+    max-width:500px;
+    margin:120px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+    background:var(--verde);
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ANIMACIÓN */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    animation:aparecer 1s ease forwards;
+}
+
+.fade:nth-child(1){animation-delay:0.2s;}
+.fade:nth-child(2){animation-delay:0.4s;}
+.fade:nth-child(3){animation-delay:0.6s;}
+
+@keyframes aparecer{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .contenido-rutas{ grid-template-columns:repeat(2,1fr); }
+    .cards{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:500px){
+    .contenido-rutas{ grid-template-columns:1fr; }
+    .cards{ grid-template-columns:1fr; }
+}
+
+/* MENU RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-icon{ display:block; }
+
+    nav{
+        position:absolute;
+        top:60px;
+        width:100%;
+        background:var(--verde);
+        display:none;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .menu-toggle:checked + .menu-icon + nav{
+        display:block;
+    }
+}
