@@ -288,11 +288,11 @@ footer{
 @media(max-width:768px){
 
     .menu-icon{ display:block; }
+
     nav{
         position:absolute;
-        margin-left: 315px;
-        top:48px;
-        width:150px;
+        top:60px;
+        width:100%;
         background:var(--verde);
         display:none;
     }
@@ -319,6 +319,10 @@ footer{
         width:80%;
         text-align:center;
     }
+
+
+    
+
 }
 
 
