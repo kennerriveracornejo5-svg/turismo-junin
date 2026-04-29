@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zapateria Alondra</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+  <body>
+    <div class="navegador">
+      <!-- BARRA NEGRA -->
+      <div class="barra">
+        <p id="frase"></p>
+      </div>
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="logo">
+          <img src="img/logo.png" alt="logo" />
+        </div>
+
+        <div class="hamburguesa" id="hamburguesa">☰</div>
+
+        <nav class="menu" id="menu">
+          <a href="#">Mujer</a>
+          <a href="#">Hombre</a>
+          <a href="#">Juvenil</a>
+          <a href="#">Niños</a>
+          <a href="#">Promociones</a>
+          <a href="#" class="extra">Nuestras tiendas</a>
+          <a href="#" class="extra">Zona emprendedores</a>
+        </nav>
+      </header>
+    </div>
+    <!--  FONDO OSCURO -->
+    <div class="overlay" id="overlay"></div>
+    <div class="carrusel">
+      <div class="principal">
+        <div class="slider-container">
+          <div class="slider" id="slider">
+            <img src="img/zapa.png" />
+            <img src="img/zapa1.png" />
+            <img src="img/zapa2.png" />
+            <img src="img/zapa3.png" />
+          </div>
+
+          <!-- botones -->
+          <button class="btn prev" onclick="mover(-1)">❮</button>
+          <button class="btn next" onclick="mover(1)">❯</button>
+
+          <!-- dots -->
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
